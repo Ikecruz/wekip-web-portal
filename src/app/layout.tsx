@@ -1,8 +1,24 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { IBM_Plex_Sans, IBM_Plex_Serif, Inter } from "next/font/google";
 import "./globals.css";
+import '@mantine/core/styles.css';
+import '@mantine/dropzone/styles.css';
+import Providers from "@/components/providers";
 
-const inter = Inter({ subsets: ["latin"] });
+const ibmSans = IBM_Plex_Sans({
+  subsets: ["latin"], weight: ["100", "200", "300", "500", "700"],
+  display: "swap",
+  variable: '--font-main',
+  adjustFontFallback: false
+})
+
+const ibmSerif = IBM_Plex_Serif({
+  subsets: ["latin"], weight: ["100", "200", "300", "500", "700"],
+  display: "swap",
+  variable: '--font-heading',
+  adjustFontFallback: false
+})
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +32,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${ibmSans.variable} ${ibmSerif.variable}`}>
+        <Providers>
+          {children}
+        </Providers>
+      </body>
     </html>
   );
 }
