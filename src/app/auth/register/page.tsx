@@ -51,10 +51,10 @@ const Register = () => {
         setStatus({ statusText: "pending" })
 
         const formData = new FormData()
-        formData.append('image', files[0])
+        formData.append('logo', files[0])
         formData.append('name', values.name)
         formData.append('email', values.email),
-            formData.append('password', values.password)
+        formData.append('password', values.password)
 
         try {
 

@@ -57,21 +57,19 @@ const AuthProvider = ({
         useEffect(() => {
             const inAuthGroup = pathname.slice(0, 4) === "/auth";
 
-            console.log(pathname.slice(0, 4))
-
             if (loading) return;
 
             if (!token && !inAuthGroup) {
-                router.push("/auth/login")
+                if (pathname !== "/auth/login") router.push("/auth/login")
             } else {
-                router.push("/")
+                if (pathname !== "/") router.push("/")
             }
 
         }, [_token, loading, searchParams, pathname])
 
     }
 
-    // useProtectedRoute(token as string)
+    useProtectedRoute(token as string)
 
     return (
         <AuthContext.Provider value={{ token, loading, signIn, signOut }}>
