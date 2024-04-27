@@ -63,7 +63,7 @@ const Upload = () => {
     return <>
 
         <div className="h-[100vh] w-full flex justify-center items-center">
-            <div className="flex flex-col w-[400px]">
+            <div className="flex flex-col w-[500px]">
                 <p className="text-3xl font-extrabold mb-1" style={{ fontFamily: Typography.heading }}>Upload Portal</p>
                 <Text size="sm" c="gray" mb={20}>Enter User's share code and upload receipt</Text>
                 {

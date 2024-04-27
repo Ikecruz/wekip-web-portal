@@ -56,7 +56,7 @@ const Verify = () => {
         try {
             await makePublicApiCall({
                 method: "POST",
-                url: "/auth/otp",
+                url: "/auth/business/otp",
             })
         } catch (err) {
             console.log(err)
